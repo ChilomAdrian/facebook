@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.mapping.Set;
+
 
 @Entity
 @Getter
@@ -24,10 +26,12 @@ public class Role {
     @Column(unique = true, nullable = false)
     private String name;
 
+
     public Role(String name) {
         this.name = name;
     }
 
+    @Override
     public String toString() {
         return name;
     }
