@@ -12,7 +12,7 @@ import java.util.List;
 public interface PostRepo extends JpaRepository<Post, Integer> {
 
     @Query(value = "Select * from post where user_id = ?", nativeQuery = true)
-    static List<Post> findByUserId(Integer userId);
+    List<Post> findByUserId(Integer userId);
 
     @Query(value = "Select * from post where message LIKE %:keyword%", nativeQuery = true)
     List<Post> getPostsWithMention(String keyword);

@@ -45,7 +45,7 @@ public class RunAtStartup {
         springUser.setAccountNonExpired(true);
         springUser.setAccountNonLocked(true);
         springUser.setCredentialsNonExpired(true);
-        Set<Post> posts = Set.of(new Post(" user message post 1", LocalDateTime.now(), springUser),
+        Set<Post> posts = Set.of(new Post(" elenamaria message post 1", LocalDateTime.now(), springUser),
                 new Post("elenamaria message post 2", LocalDateTime.now(), springUser),
                 new Post("elenamaria message post 3", LocalDateTime.now(), springUser));
         springUser.setPosts(posts);
@@ -63,7 +63,7 @@ public class RunAtStartup {
         springUser2.setAccountNonExpired(true);
         springUser2.setAccountNonLocked(true);
         springUser2.setCredentialsNonExpired(true);
-        Set<Post> posts2 = Set.of(new Post(" lticoiu message post 1 user", LocalDateTime.now(), springUser2),
+        Set<Post> posts2 = Set.of(new Post(" marian12 message post 1 user", LocalDateTime.now(), springUser2),
                 new Post("marian12 message post 2", LocalDateTime.now(), springUser2),
                 new Post("marian12 message post 3", LocalDateTime.now(), springUser2));
         springUser2.setPosts(posts2);
@@ -81,7 +81,7 @@ public class RunAtStartup {
         springUser3.setAccountNonExpired(true);
         springUser3.setAccountNonLocked(true);
         springUser3.setCredentialsNonExpired(true);
-        Set<Post> posts3 = Set.of(new Post(" pgirdea message post 1", LocalDateTime.now(), springUser3),
+        Set<Post> posts3 = Set.of(new Post(" daniel message post 1", LocalDateTime.now(), springUser3),
                 new Post("daniel message post 2", LocalDateTime.now(), springUser3),
                 new Post("daniel message post 3", LocalDateTime.now(), springUser3));
         springUser3.setPosts(posts3);

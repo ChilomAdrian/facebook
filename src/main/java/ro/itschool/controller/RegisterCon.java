@@ -16,6 +16,7 @@ import java.util.Collections;
 
 @Controller
 public class RegisterCon {
+
     @Autowired
     private SpringUserService userService;
 

@@ -13,13 +13,17 @@ public interface SpringUserRepo extends JpaRepository<SpringUser, Integer> {
 
     SpringUser findByUsername(String username);
 
-    @Query(value = "SELECT * FROM spring_user u WHERE u.username LIKE %:keyword% OR u.first_name LIKE %:keyword% OR " +
-            "u.last_name LIKE %:keyword% ",
+    @Query(
+            value = "SELECT * FROM spring_user u WHERE u.username LIKE %:keyword% OR u.first_name LIKE %:keyword% OR " +
+                    "u.last_name LIKE %:keyword% ",
             nativeQuery = true)
     List<SpringUser> searchUser(String keyword);
 
     @Transactional
     @Modifying
+    @Query(value = "INSERT INTO follow(follower_id, followed_id) VALUES (:followerId, :followedId)", nativeQuery = true)
+    void insertIntoFollowTable(@Param("followerId") Integer followerId, @Param("followedId") Integer followedId);
+
     @Query(value = """
             SELECT b.user_id, b.username, b.last_name, b.first_name, b.email FROM spring_user a INNER JOIN follow
             ON a.user_id = follow.follower_id

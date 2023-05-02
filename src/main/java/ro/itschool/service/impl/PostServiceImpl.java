@@ -35,7 +35,7 @@ public class PostServiceImpl implements PostService {
                         elem[4].toString()))
                 .toList();
         return springUsers.stream()
-                .map(user -> PostRepo.findByUserId(user.getId()))
+                .map(user -> postRepo.findByUserId(user.getId()))
                 .flatMap(Collection::stream)
                 .toList();
     }
@@ -55,7 +55,7 @@ public class PostServiceImpl implements PostService {
     public List<Post> getMyPosts() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         SpringUser loggedInUser = springUserRepo.findByUsername(authentication.getName());
-        return PostRepo.findByUserId(loggedInUser.getId());
+        return postRepo.findByUserId(loggedInUser.getId());
     }
 
     @Override
