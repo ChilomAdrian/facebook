@@ -25,7 +25,7 @@ public class RunAtStartup {
     private final PostRepo postRepo;
 
     @EventListener(ApplicationReadyEvent.class)
-    public void insertRestaurantsIntoDB() {
+    public void insertUsersInDb() {
 
 
         Role role = new Role("ROLE_USER");
@@ -45,9 +45,9 @@ public class RunAtStartup {
         springUser.setAccountNonExpired(true);
         springUser.setAccountNonLocked(true);
         springUser.setCredentialsNonExpired(true);
-        Set<Post> posts = Set.of(new Post(" elenamaria message post 1", LocalDateTime.now(), springUser),
-                new Post("elenamaria message post 2", LocalDateTime.now(), springUser),
-                new Post("elenamaria message post 3", LocalDateTime.now(), springUser));
+        Set<Post> posts = Set.of(new Post(" elenamaria post 1", LocalDateTime.now(), springUser),
+                new Post("elenamaria post 2", LocalDateTime.now(), springUser),
+                new Post("elenamaria post 3", LocalDateTime.now(), springUser));
         springUser.setPosts(posts);
         postRepo.saveAll(posts);
         springUserService.registerUser(springUser);
@@ -63,9 +63,9 @@ public class RunAtStartup {
         springUser2.setAccountNonExpired(true);
         springUser2.setAccountNonLocked(true);
         springUser2.setCredentialsNonExpired(true);
-        Set<Post> posts2 = Set.of(new Post(" marian12 message post 1 user", LocalDateTime.now(), springUser2),
-                new Post("marian12 message post 2", LocalDateTime.now(), springUser2),
-                new Post("marian12 message post 3", LocalDateTime.now(), springUser2));
+        Set<Post> posts2 = Set.of(new Post(" marian12 my first post", LocalDateTime.now(), springUser2),
+                new Post("marian12 post 2", LocalDateTime.now(), springUser2),
+                new Post("marian12 post 3", LocalDateTime.now(), springUser2));
         springUser2.setPosts(posts2);
         postRepo.saveAll(posts2);
         springUserService.registerUser(springUser2);
@@ -81,9 +81,9 @@ public class RunAtStartup {
         springUser3.setAccountNonExpired(true);
         springUser3.setAccountNonLocked(true);
         springUser3.setCredentialsNonExpired(true);
-        Set<Post> posts3 = Set.of(new Post(" daniel message post 1", LocalDateTime.now(), springUser3),
-                new Post("daniel message post 2", LocalDateTime.now(), springUser3),
-                new Post("daniel message post 3", LocalDateTime.now(), springUser3));
+        Set<Post> posts3 = Set.of(new Post(" daniel post 1", LocalDateTime.now(), springUser3),
+                new Post("daniel post 2", LocalDateTime.now(), springUser3),
+                new Post("daniel post 3", LocalDateTime.now(), springUser3));
         springUser3.setPosts(posts3);
         postRepo.saveAll(posts3);
         springUserService.registerUser(springUser3);
